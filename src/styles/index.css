@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  background-color: #b71b1b;
+}
+
+.App {
+  height: 100vh;
+  display: grid;
+  row-gap: 1.5rem;
+  grid-template-columns: 10% auto 10%;
+  grid-template-rows: 10% auto;
+  grid-template-areas:
+    '. header .'
+    '. content .';
+}
+
+.img-fluid {
+  height: auto;
+  max-width: 100%;
+}
+
+header {
+  height: 10vh;
+  width: 100%;
+  display: grid;
+  grid-area: header;
+  margin-top: 1.5rem;
+  grid-template-rows: 1fr;
+  grid-template-columns: 50% 50%;
+  justify-content: space-between;
+}
+
+.logo {
+  justify-self: end;
+}
+
+.leds-container {
+  display: grid;
+  justify-content: start;
+  grid-auto-flow: column;
+}
+
+.led {
+  height: 40px;
+  width: 40px;
+  border: 3px solid white;
+  border-radius: 50%;
+  margin-left: 1rem;
+}
+
+.led-blue {
+  height: 80px;
+  width: 80px;
+  border: 5px solid white;
+  background-color: blue;
+  background-image: linear-gradient(135deg, white 5px, blue);
+}
+.led-red {
+  background-color: red;
+  background-image: linear-gradient(135deg, white 5px, red);
+}
+
+.led-yellow {
+  background-color: yellow;
+  background-image: linear-gradient(135deg, white 5px, yellow);
+}
+
+.led-green {
+  background-color: green;
+  background-image: linear-gradient(135deg, white 5px, green);
+}
+
+#screen {
+  margin-top: 1.5rem;
+  background-color: #343a40;
+  height: 70vh;
+  grid-area: content;
+  border-radius: 20px;
+  border: 20px solid #dedede;
+  border-top-width: 40px;
+  border-bottom-width: 40px;
+  background-image: linear-gradient(135deg, #343a40, white 3000px, #343a40);
+}
+
+#loader {
+  display: grid;
+  justify-items: center;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+#loader img {
+  animation-name: spin;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
